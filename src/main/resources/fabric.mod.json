@@ -1,0 +1,43 @@
+{
+	"schemaVersion": 1,
+	"id": "badrespawn",
+	"version": "${version}",
+	"name": "Bad Respawn",
+	"description": "A mod that makes respawning from beds and respawn anchors more fair.",
+	"authors": [
+		"arndew"
+	],
+	"contact": {
+		"homepage": "https://github.com/arndew/bad-respawn-fabric"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/badrespawn/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.arndew.badrespawn.BadRespawn"
+		],
+		"client": [
+			"com.arndew.badrespawn.BadRespawnClient"
+		],
+		"fabric-datagen": [
+			"com.arndew.badrespawn.BadRespawnDataGenerator"
+		]
+	},
+	"mixins": [
+		"badrespawn.mixins.json",
+		{
+			"config": "badrespawn.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.6",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

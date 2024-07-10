@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"package": "com.arndew.badrespawn.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"EntityDamageMixin",
+		"PlayerRespawnMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
