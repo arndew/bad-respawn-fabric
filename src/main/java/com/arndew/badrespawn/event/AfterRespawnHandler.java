@@ -3,14 +3,12 @@ package com.arndew.badrespawn.event;
 import com.arndew.badrespawn.effect.ModStatusEffects;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.server.network.ServerPlayerEntity;
 
 import java.util.Random;
 
 public class AfterRespawnHandler implements BedAnchorRespawnCallback, ServerPlayerEvents.AfterRespawn {
-    StatusEffectInstance fragility = new StatusEffectInstance(ModStatusEffects.FRAGILITY, -1);
-    StatusEffectInstance hallucination = new StatusEffectInstance(ModStatusEffects.HALLUCINATION, 6000);
-
     private boolean eventTriggered = false;
 
     @Override
@@ -21,11 +19,16 @@ public class AfterRespawnHandler implements BedAnchorRespawnCallback, ServerPlay
     @Override
     public void afterRespawn(ServerPlayerEntity oldPlayer, ServerPlayerEntity newPlayer, boolean alive) {
         if (eventTriggered) {
+            StatusEffectInstance fragility = new StatusEffectInstance(ModStatusEffects.FRAGILITY, -1);
+            StatusEffectInstance hallucination = new StatusEffectInstance(ModStatusEffects.HALLUCINATION, 6000);
+            StatusEffectInstance hunger = new StatusEffectInstance(StatusEffects.HUNGER, 600);
+
             generatePlayerHealth(newPlayer);
             generatePlayerHunger(newPlayer);
 
             newPlayer.addStatusEffect(fragility);
             newPlayer.addStatusEffect(hallucination);
+            newPlayer.addStatusEffect(hunger);
             eventTriggered = false;
         }
     }

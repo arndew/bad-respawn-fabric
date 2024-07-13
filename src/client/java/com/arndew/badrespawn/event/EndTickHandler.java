@@ -2,27 +2,29 @@ package com.arndew.badrespawn.event;
 
 import com.arndew.badrespawn.effect.ModStatusEffects;
 import com.arndew.badrespawn.sound.SoundHandler;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.server.MinecraftServer;
+import net.minecraft.client.world.ClientWorld;
+
 import java.util.Random;
 
-public class EndTickHandler implements ServerTickEvents.EndTick {
-    static ClientPlayerEntity player = MinecraftClient.getInstance().player;
+public class EndTickHandler implements ClientTickEvents.EndTick {
     private static final Random random = new Random();
     private static int soundTick = random.nextInt(1000, 10000);
 
     @Override
-    public void onEndTick(MinecraftServer server) {
-        if (!(player != null && player.hasStatusEffect(ModStatusEffects.HALLUCINATION))) {
-            return;
-        }
-        int currentTick = server.getTicks();
+    public void onEndTick(MinecraftClient client) {
+        ClientPlayerEntity player = client.player;
+        ClientWorld world = client.world;
 
-        if (currentTick > soundTick) {
-            SoundHandler.playSound();
-            soundTick += random.nextInt();
+        if ((player != null && player.hasStatusEffect(ModStatusEffects.HALLUCINATION) && world != null)) {
+            long currentTick = world.getTime();
+
+            if (currentTick > soundTick) {
+                SoundHandler.playSound(player, world);
+                soundTick += random.nextInt(1000, 8000);
+            }
         }
     }
 }
