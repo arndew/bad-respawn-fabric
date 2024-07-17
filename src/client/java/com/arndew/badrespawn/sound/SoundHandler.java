@@ -5,6 +5,7 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.sound.MusicTracker;
 import net.minecraft.client.sound.SoundManager;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.sound.MusicSound;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -13,21 +14,25 @@ import net.minecraft.util.math.BlockPos;
 import java.util.Random;
 
 public class SoundHandler {
-    static SoundManager soundManager = MinecraftClient.getInstance().getSoundManager();
-    static MusicTracker musicTracker = MinecraftClient.getInstance().getMusicTracker();
+    private static final MinecraftClient client = MinecraftClient.getInstance();
+    private static final SoundManager soundManager = client.getSoundManager();
+    private static final MusicTracker musicTracker = client.getMusicTracker();
+    private static MusicSound gameMusic;
 
     private static final SoundEvent[] mobSounds = {SoundEvents.ENTITY_CREEPER_PRIMED, SoundEvents.ENTITY_WOLF_HOWL, SoundEvents.ENTITY_GHAST_SCREAM, ModSounds.GHOST_SCARE};
 
     private static final Random random = new Random();
 
     public static void reduceSound() {
+        gameMusic = client.getMusicType();
         soundManager.stopSounds(null, SoundCategory.AMBIENT);
         soundManager.stopSounds(null, SoundCategory.MUSIC);
-        musicTracker.stop();
+        musicTracker.stop(gameMusic);
     }
 
     public static void resumeSounds() {
         soundManager.resumeAll();
+        musicTracker.play(gameMusic);
     }
 
     private static BlockPos getSoundBlockPos(ClientPlayerEntity player) {
