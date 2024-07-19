@@ -2,7 +2,7 @@
 A mod that makes respawning in Minecraft less convenient.
 
 ### Why?
-When looking for a challenge player's often look to Hardcore Minecraft. However, this come with the risk of losing you're world upon death. This mod aims to make deaths in Minecraft punishing but still allowing the player to take risks without the fear of losing the world they worked so hard on.
+When looking for a challenge players often look to Hardcore Minecraft. However, this come with the risk of losing you're world upon death. This mod aims to make deaths in Minecraft punishing but still allowing the player to take risks without the fear of losing the world they worked so hard on.
 
 ### Features:
 * **Respawning:**
