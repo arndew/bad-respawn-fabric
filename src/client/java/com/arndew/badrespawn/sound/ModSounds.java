@@ -7,7 +7,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
 public class ModSounds {
-    private static final Identifier GHOST_SCARE_ID = new Identifier(BadRespawn.MOD_ID, "ghost_scare");
+    private static final Identifier GHOST_SCARE_ID = Identifier.of(BadRespawn.MOD_ID, "ghost_scare");
 
     public static final SoundEvent GHOST_SCARE = SoundEvent.of(GHOST_SCARE_ID);
 

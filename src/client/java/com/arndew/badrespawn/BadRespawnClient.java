@@ -1,7 +1,7 @@
 package com.arndew.badrespawn;
 
-import com.arndew.badrespawn.entity.ModEntities;
 import com.arndew.badrespawn.entity.GhostEntityModel;
+import com.arndew.badrespawn.entity.ModEntities;
 import com.arndew.badrespawn.entity.GhostEntityRenderer;
 import com.arndew.badrespawn.entity.ModModelLayers;
 import com.arndew.badrespawn.event.EndTickHandler;

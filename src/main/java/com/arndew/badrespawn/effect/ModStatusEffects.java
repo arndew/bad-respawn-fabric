@@ -12,7 +12,7 @@ public class ModStatusEffects {
     public static RegistryEntry<StatusEffect> HALLUCINATION;
 
     private static RegistryEntry<StatusEffect> registerStatusEffect(String id, StatusEffect statusEffect) {
-        return Registry.registerReference(Registries.STATUS_EFFECT, new Identifier(BadRespawn.MOD_ID, id), statusEffect);
+        return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(BadRespawn.MOD_ID, id), statusEffect);
     }
 
     public static void registerModStatusEffects() {
