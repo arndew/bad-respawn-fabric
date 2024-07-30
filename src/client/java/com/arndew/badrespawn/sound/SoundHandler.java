@@ -31,6 +31,7 @@ public class SoundHandler {
     }
 
     public static void resumeSounds() {
+        gameMusic = client.getMusicType();
         soundManager.resumeAll();
         musicTracker.play(gameMusic);
     }
