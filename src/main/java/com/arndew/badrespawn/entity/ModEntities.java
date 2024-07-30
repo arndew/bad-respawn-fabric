@@ -10,4 +10,6 @@ import net.minecraft.util.Identifier;
 public class ModEntities {
     public static final EntityType<GhostEntity> GHOST = Registry.register(Registries.ENTITY_TYPE, Identifier.of(BadRespawn.MOD_ID, "ghost"),
             EntityType.Builder.create(GhostEntity::new, SpawnGroup.MONSTER).dimensions(0.8f, 1.8f).eyeHeight(1.2f).build());
+    public static final EntityType<GhostHandEntity> GHOST_HAND = Registry.register(Registries.ENTITY_TYPE, Identifier.of(BadRespawn.MOD_ID, "ghost_hand"),
+            EntityType.Builder.create(GhostHandEntity::new, SpawnGroup.MONSTER).dimensions(0.3f, 0.3f).build());
 }

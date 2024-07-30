@@ -1,5 +1,6 @@
-package com.arndew.badrespawn.entity;
+package com.arndew.badrespawn.entity.ghost;
 
+import com.arndew.badrespawn.entity.GhostEntity;
 import com.arndew.badrespawn.entity.animation.GhostAnimations;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
@@ -10,6 +11,7 @@ public class GhostEntityModel<T extends GhostEntity> extends SinglePartEntityMod
 	public GhostEntityModel(ModelPart root) {
 		this.ghost = root.getChild("ghost");
 	}
+
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();

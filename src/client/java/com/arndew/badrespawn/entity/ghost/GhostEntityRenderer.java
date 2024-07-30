@@ -1,6 +1,8 @@
-package com.arndew.badrespawn.entity;
+package com.arndew.badrespawn.entity.ghost;
 
 import com.arndew.badrespawn.BadRespawn;
+import com.arndew.badrespawn.entity.GhostEntity;
+import com.arndew.badrespawn.entity.ModModelLayers;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.util.Identifier;

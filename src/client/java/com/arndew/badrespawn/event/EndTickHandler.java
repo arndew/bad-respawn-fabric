@@ -22,12 +22,12 @@ public class EndTickHandler implements ClientTickEvents.EndTick {
             long currentTick = world.getTime();
 
             if (soundTick == 0) {
-                soundTick = (int) (currentTick + random.nextInt(4000, 8000));
+                soundTick = (int) (currentTick + random.nextInt(1000, 3000));
             }
 
             if (currentTick > soundTick) {
                 SoundHandler.playSound(player, world);
-                soundTick += random.nextInt(4000, 8000);
+                soundTick += random.nextInt(1000, 3000);
             }
         }
     }

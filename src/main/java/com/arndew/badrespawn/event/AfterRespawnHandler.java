@@ -20,7 +20,7 @@ public class AfterRespawnHandler implements BedAnchorRespawnCallback, ServerPlay
     public void afterRespawn(ServerPlayerEntity oldPlayer, ServerPlayerEntity newPlayer, boolean alive) {
         if (eventTriggered) {
             StatusEffectInstance fragility = new StatusEffectInstance(ModStatusEffects.FRAGILITY, -1);
-            StatusEffectInstance hallucination = new StatusEffectInstance(ModStatusEffects.HALLUCINATION, 6000);
+            StatusEffectInstance hallucination = new StatusEffectInstance(ModStatusEffects.HALLUCINATION, 12000);
             StatusEffectInstance hunger = new StatusEffectInstance(StatusEffects.HUNGER, 600);
 
             generatePlayerHealth(newPlayer);

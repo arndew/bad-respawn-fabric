@@ -6,4 +6,5 @@ import net.minecraft.util.Identifier;
 
 public class ModModelLayers {
     public static final EntityModelLayer GHOST = new EntityModelLayer(Identifier.of(BadRespawn.MOD_ID, "ghost"), "main");
+    public static final EntityModelLayer GHOST_HAND = new EntityModelLayer(Identifier.of(BadRespawn.MOD_ID, "ghost_hand"), "main");
 }
