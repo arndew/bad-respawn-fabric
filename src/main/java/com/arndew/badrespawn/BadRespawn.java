@@ -1,6 +1,7 @@
 package com.arndew.badrespawn;
 
 import com.arndew.badrespawn.effect.ModStatusEffects;
+import com.arndew.badrespawn.entity.GhostHandEntity;
 import com.arndew.badrespawn.entity.ModEntities;
 import com.arndew.badrespawn.entity.GhostEntity;
 import com.arndew.badrespawn.event.AfterKilledEntityHandler;
@@ -28,5 +29,6 @@ public class BadRespawn implements ModInitializer {
 		ServerEntityCombatEvents.AFTER_KILLED_OTHER_ENTITY.register(new AfterKilledEntityHandler());
 
 		FabricDefaultAttributeRegistry.register(ModEntities.GHOST, GhostEntity.createGhostAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.GHOST_HAND, GhostHandEntity.createGhostHandAttributes());
 	}
 }

@@ -1,6 +1,7 @@
-package com.arndew.badrespawn.entity;
+package com.arndew.badrespawn.entity.ghost;
 
-import com.arndew.badrespawn.animation.GhostAnimations;
+import com.arndew.badrespawn.entity.GhostEntity;
+import com.arndew.badrespawn.entity.animation.GhostAnimations;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 
